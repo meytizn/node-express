@@ -7,6 +7,11 @@ app.get("/", (req,res)=>{
 })
 
 
+app.get("/register" ,(req,res)=>{res.send("register form ")} )
+app.post("/register" ,(req,res)=>{res.send("post was successfull ")} )
+
+
+
 app.listen( port , ()=>{ 
     console.log(`app is runnig on port ${port}`) 
 } )
