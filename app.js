@@ -5,11 +5,14 @@ const app = express()
 const port = 3000 ;
 
 
-// template engin pug
+// template engin pug and addressing static and others folders
 
 app.set("view engine", "pug");
 app.set("views", "./views");
 
+const path = require("path");
+app.use('/static', express.static(path.join(__dirname,"public")));
+app.use('/images', express.static(path.join(__dirname,"images")));
 
 // routes
 
