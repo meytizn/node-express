@@ -2,6 +2,7 @@ const express = require("express")
 const homeRouter = require("./routes/index")
 const userRouter = require("./routes/users")
 const app = express()
+const bodyParser = require("body-parser")
 const port = 3000 ;
 
 
@@ -13,6 +14,11 @@ app.set("views", "./views");
 const path = require("path");
 app.use('/static', express.static(path.join(__dirname,"public")));
 app.use('/images', express.static(path.join(__dirname,"images")));
+
+
+// user body parser to recive user's datas sent by form 
+app.use(express.urlencoded({ extended: true }));
+
 
 // routes
 
