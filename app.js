@@ -17,7 +17,7 @@ app.use('/images', express.static(path.join(__dirname,"images")));
 
 
 // user body parser to recive user's datas sent by form 
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // routes
