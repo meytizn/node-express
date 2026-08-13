@@ -6,37 +6,8 @@ const port = 3000 ;
 
 
 // routes
-// app.use("/" ,homeRouter )
-// app.use("/users" ,userRouter)
-
-
-
-
-// public middlewar
-
-const firstMid = function(req,res,next){
-    req.activeTime = new Date().toLocaleTimeString()
-    next()
-}
-app.use(firstMid)
-
-
-// routes
-
-app.get('/',(req,res)=>{
-    res.send(`homepage with firstMid ${req.activeTime}`)
-})
-
-
-app.get('/about',
-    // private middle war
-    (req,res,next)=>{ console.log("private middle war ") ;next() },
-
-    (req,res)=>{ 
-        res.send(`homepage with firstMid ${req.activeTime}`)}
-
-)
-
+app.use("/" ,homeRouter )
+app.use("/users" ,userRouter)
 
 
 
