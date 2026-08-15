@@ -11,7 +11,7 @@ router.get("/register" ,(req,res)=>{
 
 
 router.post("/register", async (req, res) => {
-  
+
   const userInfo = req.body;
 
   if (!userInfo.username || !userInfo.email || !userInfo.password) {
@@ -26,10 +26,10 @@ router.post("/register", async (req, res) => {
 
   try {
     await newUser.save();
-    res.send(`NEW USER ${newUser.username} added successfully.`);
+    res.render("register_done",{message:"successfully added ",type:"success" , user:newUser});
   } 
   catch (err) {
-    res.send(err);
+    res.render("register_done",{message :"database error" , type:"error"});
   }
 
 });
