@@ -3,6 +3,8 @@ const homeRouter = require("./routes/index")
 const userRouter = require("./routes/users")
 const app = express()
 const bodyParser = require("body-parser")
+const mongoose = require("mongoose")
+mongoose.connect("mongodb://127.0.0.1:27017/my_db")
 const port = 3000 ;
 
 
