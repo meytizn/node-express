@@ -5,7 +5,10 @@ const app = express()
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 mongoose.connect("mongodb://127.0.0.1:27017/my_db")
+
 const cookieParser = require("cookie-parser")
+const session = require("express-session")
+
 const port = 3000 ;
 
 
@@ -22,6 +25,7 @@ app.use('/images', express.static(path.join(__dirname,"images")));
 // middlewar
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser())
+app.use(session({secret:"this is secret session "}))
 
 
 // routes

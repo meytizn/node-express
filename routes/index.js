@@ -1,4 +1,5 @@
 const express = require("express")
+const session = require("express-session")
 const router =express.Router()
 
 
@@ -18,7 +19,21 @@ router.get("/", (req,res)=>{
 
 
 router.get("/about", (req,res)=>{
-    res.send("about us ")
+    
+    // session 
+
+    if(req.session.show_about){
+        req.session.show_about++;
+    }
+    else{
+    req.session.show_about++;
+    }
+    res.send(`about us ${req.session.show_about}`)
+
+    delete req.session.show_about;
+    req.session.destroy();
+
+    
 })
 
 
