@@ -2,6 +2,15 @@
 
 A Node.js and Express.js application built to practice and implement core backend concepts, including routing, middleware, Pug templating, form handling, MongoDB integration, cookies, and sessions.
 
+
+# Installation
+```
+git clone https://github.com/meytizn/node-express.git
+cd node-express
+npm install
+nodemon app.js
+```
+
 ## 🚀 Features
 
 - Express.js server
