@@ -20,20 +20,21 @@ router.get("/", (req,res)=>{
 
 router.get("/about", (req,res)=>{
     
-    // session 
+    res.send(`about us`)
 
-    if(req.session.show_about){
-        req.session.show_about++;
-    }
-    else{
-    req.session.show_about++;
-    }
-    res.send(`about us ${req.session.show_about}`)
+    // using session 
+    // if(req.session.show_about){
+    //     req.session.show_about++;
+    // }
+    // else{
+    // req.session.show_about++;
+    // }
+    // res.send(`about us ${req.session.show_about}`)
 
-    delete req.session.show_about;
-    req.session.destroy();
+    // delete req.session.show_about;
+    // req.session.destroy();
 
-    
+
 })
 
 
