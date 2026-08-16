@@ -5,6 +5,7 @@ const app = express()
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 mongoose.connect("mongodb://127.0.0.1:27017/my_db")
+const cookieParser = require("cookie-parser")
 const port = 3000 ;
 
 
@@ -18,8 +19,9 @@ app.use('/static', express.static(path.join(__dirname,"public")));
 app.use('/images', express.static(path.join(__dirname,"images")));
 
 
-// user body parser to recive user's datas sent by form 
+// middlewar
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser())
 
 
 // routes
